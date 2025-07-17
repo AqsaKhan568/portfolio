@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aqsa Khan | Portfolio</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      color: #222;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    a {
+      text-decoration: none;
+      color: #0077cc;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 50px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: #f0f0f0;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .nav-links li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 100px 20px;
+      text-align: center;
+      background: #e9f7ff;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+
+    /* About Section */
+    .about {
+      padding: 60px 40px;
+    }
+
+    .skills ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skills li {
+      background: #f1f1f1;
+      padding: 8px 12px;
+      border-radius: 5px;
+    }
+
+    /* Projects Section */
+    .projects {
+      padding: 60px 40px;
+      background: #f9f9f9;
+    }
+
+    .project-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .project {
+      padding: 20px;
+      background: white;
+      border-left: 4px solid #0077cc;
+      border-radius: 5px;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 60px 40px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f0f0f0;
+      font-size: 14px;
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .navbar,
+    body.dark-mode footer {
+      background-color: #1f1f1f;
+    }
+
+    body.dark-mode .project {
+      background: #1e1e1e;
+      border-left-color: #5bc0de;
+    }
+
+    body.dark-mode a {
+      color: #5bc0de;
+    }
+
+    body.dark-mode .btn,
+    body.dark-mode .theme-toggle {
+      background: #5bc0de;
+      color: #000;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hero {
+        padding: 60px 20px;
+      }
+
+      .project-list {
+        flex-direction: column;
+      }
+
+      .skills ul {
+        flex-direction: column;
+      }
+
+      .theme-toggle {
+        top: 10px;
+        right: 10px;
+        padding: 8px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Theme Toggle Button -->
+  <button id="theme-toggle" class="theme-toggle">🌙 Dark Mode</button>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">Aqsa Khan</h1>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h2>Hi, I'm Aqsa Khan</h2>
+    <p>A passionate Software Engineering student</p>
+    <a href="#projects" class="btn">View Projects</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I am currently studying Software Engineering at COMSATS Lahore. I love building web applications and learning new technologies like JavaScript and Laravel.</p>
+    <div class="skills">
+      <h3>Skills</h3>
+      <ul>
+        <li>HTML/CSS</li>
+        <li>JavaScript</li>
+        <li>Laravel</li>
+        <li>MySQL</li>
+        <li>Git/GitHub</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <div class="project">
+        <h3>Student Grade Tracker</h3>
+        <p>A web-based system to track student grades and calculate final results automatically.</p>
+        <a href="https://aqsakhan568.github.io/CodeAlpha_StudentGradeTracker/" target="_blank">Live Demo</a>
+      </div>
+      <div class="project">
+        <h3>Task Manager</h3>
+        <p>Simple Laravel-based CRUD app for managing daily tasks.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>Email: aqsakhan@email.com</p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/aqsa-khan">linkedin.com/in/aqsa-khan</a></p>
+    <p>GitHub: <a href="https://github.com/aqsakhan568">github.com/aqsakhan568</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Aqsa Khan. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Theme Switcher -->
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
+  </script>
+</body>
+</html>
