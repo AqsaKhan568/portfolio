@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aqsa Khan | Portfolio</title>
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* General Styles */
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
@@ -13,22 +15,18 @@
       color: #222;
       transition: background-color 0.3s, color 0.3s;
     }
-
     a {
       text-decoration: none;
       color: #0077cc;
     }
-
     ul {
       list-style: none;
       padding: 0;
     }
-
-    /* Theme Toggle Button */
     .theme-toggle {
       position: fixed;
       top: 20px;
-      right: 20px;
+      left: 20px;
       background: #0077cc;
       color: white;
       border: none;
@@ -37,8 +35,6 @@
       cursor: pointer;
       z-index: 1000;
     }
-
-    /* Navbar */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -46,24 +42,19 @@
       padding: 20px 40px;
       background: #f0f0f0;
     }
-
     .logo {
       font-size: 24px;
       font-weight: bold;
     }
-
     .nav-links li {
       display: inline-block;
       margin: 0 10px;
     }
-
-    /* Hero Section */
     .hero {
       padding: 100px 20px;
       text-align: center;
       background: #e9f7ff;
     }
-
     .btn {
       padding: 10px 20px;
       background: #0077cc;
@@ -72,120 +63,98 @@
       border-radius: 5px;
       margin-top: 20px;
     }
-
-    /* About Section */
-    .about {
+    .about, .projects, .contact, .resume, .testimonials {
       padding: 60px 40px;
     }
-
     .skills ul {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
-
     .skills li {
       background: #f1f1f1;
       padding: 8px 12px;
       border-radius: 5px;
     }
-
-    /* Projects Section */
-    .projects {
-      padding: 60px 40px;
-      background: #f9f9f9;
-    }
-
     .project-list {
       display: flex;
       flex-direction: column;
       gap: 20px;
     }
-
     .project {
       padding: 20px;
       background: white;
       border-left: 4px solid #0077cc;
       border-radius: 5px;
     }
-
-    /* Contact Section */
-    .contact {
-      padding: 60px 40px;
+    .testimonials blockquote {
+      border-left: 5px solid #0077cc;
+      margin: 20px 0;
+      padding-left: 15px;
+      font-style: italic;
     }
+    .resume {
+      text-align: center;
+    }
+    .resume a {
+      background: #0077cc;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+    form input {
+  width: 200px;
+  padding: 10px;
+  margin: 10px 0;
+}
 
-    /* Footer */
+form textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  margin: 10px 0;
+}
+    form button {
+      background: #0077cc;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+    }
     footer {
       text-align: center;
       padding: 20px;
       background: #f0f0f0;
       font-size: 14px;
     }
-
-    /* Dark Mode */
-    body.dark-mode {
-      background-color: #121212;
-      color: #e0e0e0;
+      .dark-mode {
+      background-color: #1e1e1e;
+      color: #f9f9f9;
     }
-
-    body.dark-mode .navbar,
-    body.dark-mode footer {
-      background-color: #1f1f1f;
+    .dark-mode a {
+      color: #66b2ff;
     }
-
-    body.dark-mode .project {
-      background: #1e1e1e;
-      border-left-color: #5bc0de;
+    .dark-mode .navbar {
+      background-color: #2c2c2c;
     }
-
-    body.dark-mode a {
-      color: #5bc0de;
+    .dark-mode .btn {
+      background-color: #444;
+      color: white;
     }
-
-    body.dark-mode .btn,
-    body.dark-mode .theme-toggle {
-      background: #5bc0de;
-      color: #000;
+    .dark-mode .project {
+      background: #2a2a2a;
+      border-left-color: #66b2ff;
     }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .hero {
-        padding: 60px 20px;
-      }
-
-      .project-list {
-        flex-direction: column;
-      }
-
-      .skills ul {
-        flex-direction: column;
-      }
-
-      .theme-toggle {
-        top: 10px;
-        right: 10px;
-        padding: 8px 12px;
-      }
+    .dark-mode .resume a {
+      background: #444;
+    }
+    .dark-mode footer {
+      background: #2c2c2c;
     }
   </style>
 </head>
 <body>
-  <!-- Theme Toggle Button -->
-  <button id="theme-toggle" class="theme-toggle">🌙 Dark Mode</button>
-
-  <!-- Navigation -->
   <header>
     <nav class="navbar">
       <h1 class="logo">Aqsa Khan</h1>
@@ -193,20 +162,22 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#resume">Resume</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><button id="theme-toggle" class="btn">🌙 Toggle Theme</button></li>
+      </ul>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
+  <section id="home" class="hero" data-aos="fade-down">
     <h2>Hi, I'm Aqsa Khan</h2>
     <p>A passionate Software Engineering student</p>
     <a href="#projects" class="btn">View Projects</a>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="about">
+  <section id="about" class="about" data-aos="fade-right">
     <h2>About Me</h2>
     <p>I am currently studying Software Engineering at COMSATS Lahore. I love building web applications and learning new technologies like JavaScript and Laravel.</p>
     <div class="skills">
@@ -221,8 +192,7 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="projects">
+  <section id="projects" class="projects" data-aos="fade-up">
     <h2>Projects</h2>
     <div class="project-list">
       <div class="project">
@@ -237,26 +207,74 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p>Email: aqsakhan@email.com</p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/aqsa-khan">linkedin.com/in/aqsa-khan</a></p>
-    <p>GitHub: <a href="https://github.com/aqsakhan568">github.com/aqsakhan568</a></p>
+  <section id="testimonials" class="testimonials" data-aos="zoom-in">
+    <h2>Testimonials</h2>
+    <blockquote>
+      "Aqsa is a quick learner and team player. Her contributions were essential to the success of our project." – Teammate
+    </blockquote>
+    <blockquote>
+      "Always punctual and professional. Aqsa has strong attention to detail." – Instructor
+    </blockquote>
   </section>
 
-  <!-- Footer -->
+  <section id="resume" class="resume" data-aos="fade-up">
+    <h2>Download Resume</h2>
+    <a href="resume.pdf" download>📄 Download My Resume</a>
+  </section>
+
+  <section id="contact" class="contact" data-aos="fade-left">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/movlvakl" method="POST" onsubmit="return showConfirmation(event)" style="max-width: 500px; margin-left: 0;">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <br><input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p>Email: aqsakhan321@email.com</p>
+    <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/aqsa-khan-112025333">LinkedIn</a></p>
+    <p><i class="fab fa-github"></i> <a href="https://github.com/aqsakhan568">GitHub</a></p>
+  </section>
+
   <footer>
     <p>&copy; 2025 Aqsa Khan. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript for Theme Switcher -->
+  <!-- Scripts -->
   <script>
     const toggleBtn = document.getElementById('theme-toggle');
     toggleBtn.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
-      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Toggle Theme';
     });
   </script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
+<script>
+  function showConfirmation(event) {
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        alert('✅ Message sent successfully!');
+        form.reset();
+      } else {
+        alert('❌ There was an error sending your message. Please try again.');
+      }
+    }).catch(() => {
+      alert('❌ Network error. Please check your connection.');
+    });
+    return false;
+  }
+</script>
 </body>
 </html>
+
+
